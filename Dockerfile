@@ -39,8 +39,8 @@ RUN wget https://github.com/fullstorydev/grpcurl/releases/latest/download/grpcur
     mv grpcurl /usr/local/bin && \
     rm -f grpcurl_1.8.7_linux_x86_64.tar.gz LICENSE
 
-USER 1001
+USER podman
 
-WORKDIR ${HOME}
+WORKDIR /home/podman
 
 ENTRYPOINT ["/bin/sh"]
