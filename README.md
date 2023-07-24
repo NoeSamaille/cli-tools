@@ -21,14 +21,17 @@ The container includes the following tools:
 - `unzip` cli
 - `tar` cli
 
-**Warning: The material contained in this repository has not been thoroughly tested. Proceed with caution.**
+**Warning**: The material contained in this repository has not been thoroughly tested. Proceed with caution.
 
 ## Getting started
 
 ### Prerequisites
 
 To run this image, the following tools are required:
+- `podman` cli
+- `podman` backend - e.g. podman runtime, Podman Desktop
 
+**Note**: It should also work with `docker` cli and runtime although not thouroughly tested:
 - `docker` cli
 - `docker` backend - Docker Desktop, colima, OrbStack, etc
 
@@ -39,7 +42,7 @@ Start the client to use it.
 - To run the `cli-tools` container:
 
     ```bash
-    docker run -itd --name cli-tools quay.io/noesamaille0/cli-tools
+    podman run -itd --name cli-tools -v ./cli-tools-data:/home/podman/data:Z,U quay.io/noesamaille0/cli-tools:latest
     ```
 
 Once the client is running in the background, use it by opening a shell in it.
@@ -47,7 +50,7 @@ Once the client is running in the background, use it by opening a shell in it.
 - To use the `cli-tools` container, exec shell into it:
 
     ```bash
-    docker exec -it cli-tools /bin/bash
+    podman exec -it cli-tools /bin/bash
     ```
 
     Your terminal is now in the container. 
@@ -69,7 +72,7 @@ If the client stops:
 - To run the `cli-tools` container again:
 
     ```bash
-    docker start cli-tools
+    podman start cli-tools
     ```
 
-The `cli-tools` container is just a Docker container, so all [Docker CLI commands](https://docs.docker.com/engine/reference/commandline/cli/) work.
+The `cli-tools` container is just a standard container, so all [Podman CLI commands](https://docs.podman.io/en/latest/Commands.html) should work.
