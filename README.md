@@ -31,7 +31,7 @@ To run this image, the following tools are required:
 - `podman` cli
 - `podman` backend - e.g. podman runtime, Podman Desktop
 
-**Note**: It should also work with `docker` cli and runtime although not thouroughly tested:
+**Note**: It should also work with `docker` cli and runtime although not thoroughly tested:
 - `docker` cli
 - `docker` backend - Docker Desktop, colima, OrbStack, etc
 
